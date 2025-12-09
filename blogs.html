@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO: Primary Meta Tags -->
+    <title>Blogs & Insights | Tokyo Quant - Tech Trends</title>
+    <meta name="description" content="Stay ahead of the curve with the latest insights, tutorials, and industry trends in Data Science, Cyber Security, AI, and IoT from Tokyo Quant experts.">
+    <meta name="author" content="Tokyo Quant">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="LAW2.png" type="png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient Text Utils */
+        .text-gradient {
+            background: linear-gradient(to right, #f97316, #e11d48);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Abstract blobs animation */
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 selection:bg-orange-200 selection:text-orange-900 overflow-x-hidden">
+
+    <!-- Progress Bar -->
+    <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-orange-500 to-rose-600 z-50 transition-all duration-100 w-0"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-40 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 cursor-pointer flex items-center gap-2">
+                    <img src="tokyo-.png" alt="Tokyo Quant Logo" class="h-10 w-auto object-contain">
+                    <span class="font-extrabold text-2xl tracking-tighter sr-only">TOKYO QUANT</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-sm font-semibold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-wide">Home</a>
+                    <a href="about-us.html" class="text-sm font-semibold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-wide">About Us</a>
+                    <a href="our-courses.html" class="text-sm font-semibold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-wide">Our Courses</a>
+                    <a href="blogs.html" class="text-sm font-bold text-orange-600 transition-colors uppercase tracking-wide">Blogs</a>
+                    <a href="contact.html" class="text-sm font-semibold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-wide">Contact</a>
+                    <a href="https://wa.me/918871570706" target="_blank" rel="noopener"
+   class="px-6 py-2.5 rounded-full bg-slate-900 text-white font-bold text-sm hover:bg-gradient-to-r hover:from-orange-600 hover:to-rose-600 transition-all shadow-lg hover:shadow-orange-500/25">
+    Enroll Now
+</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" aria-label="Toggle Menu" class="text-slate-900 focus:outline-none">
+                        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                        <svg id="close-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 18"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-4 pt-2 pb-8 space-y-4 flex flex-col items-center">
+                <a href="index.html" class="mobile-link text-lg font-medium text-slate-800">Home</a>
+                <a href="about-us.html" class="mobile-link text-lg font-medium text-slate-800">About Us</a>
+                <a href="our-courses.html" class="mobile-link text-lg font-medium text-slate-800">Our Courses</a>
+                <a href="blogs.html" class="mobile-link text-lg font-medium text-orange-600">Blogs</a>
+                <a href="contact.html" class="mobile-link text-lg font-medium text-slate-800">Contact</a>
+                <button class="w-full mt-4 px-6 py-3 rounded-lg bg-slate-900 text-white font-bold">Enroll Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Hero -->
+    <header class="relative pt-32 pb-20 bg-white overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-40">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-100 rounded-full blur-3xl mix-blend-multiply filter opacity-70 animate-blob"></div>
+            <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-rose-100 rounded-full blur-3xl mix-blend-multiply filter opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-32 left-20 w-[500px] h-[500px] bg-pink-100 rounded-full blur-3xl mix-blend-multiply filter opacity-70 animate-blob animation-delay-4000"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center reveal">
+            <div class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-slate-600 text-xs font-bold uppercase tracking-wider shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+                Insights & Trends
+            </div>
+            <h1 class="text-5xl md:text-7xl font-black text-slate-900 mb-6 leading-tight">
+                Decoding the <span class="text-gradient">Future</span> of Technology
+            </h1>
+            <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Expert analysis, tutorials, and career advice from the minds shaping the digital world.
+            </p>
+        </div>
+    </header>
+
+    <!-- Featured Post Section -->
+    <section class="py-12 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl reveal group cursor-pointer">
+                <!-- Background Image (Gradient Fallback) -->
+                <div class="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800 z-0"></div>
+                
+                <!-- Decorative Circle -->
+                <div class="absolute -right-20 -top-20 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl group-hover:bg-orange-500/30 transition-colors duration-500"></div>
+
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center p-8 md:p-12">
+                    <div class="order-2 lg:order-1">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-3 py-1 bg-orange-500 text-white text-xs font-bold uppercase tracking-wider rounded-full">Featured</span>
+                            <span class="text-slate-300 text-sm font-medium">Dec 12, 2024</span>
+                        </div>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight group-hover:text-orange-100 transition-colors">
+                            The Quantum Leap: How AI is Reshaping Financial Security
+                        </h2>
+                        <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                            Machine learning algorithms are now the first line of defense against financial fraud. Learn how predictive models are saving billions and what skills you need to join this revolution.
+                        </p>
+                        <a href="#" class="inline-flex items-center gap-2 text-white font-bold text-lg hover:text-orange-400 transition-all group-hover:gap-4">
+                            Read Full Story
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                        </a>
+                    </div>
+                    <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+                        <div class="w-full max-w-md aspect-video rounded-xl bg-gradient-to-br from-orange-400/20 to-rose-400/20 border border-white/10 backdrop-blur-sm flex items-center justify-center p-8 shadow-inner">
+                             <!-- Simple Abstract Graphic -->
+                             <svg class="w-32 h-32 text-white/80 animate-pulse" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                             </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Grid -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+                
+                <!-- Sidebar (Filters) -->
+                <div class="lg:col-span-1 space-y-8 reveal sticky top-24 h-fit">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-4 px-2">Explore Topics</h3>
+                        <nav class="space-y-1">
+                            <button class="filter-btn w-full text-left px-4 py-3 rounded-lg bg-slate-900 text-white font-medium shadow-md transition-all flex justify-between items-center group" data-filter="All">
+                                <span>All Articles</span>
+                                <span class="bg-white/20 px-2 py-0.5 rounded text-xs">24</span>
+                            </button>
+                            <button class="filter-btn w-full text-left px-4 py-3 rounded-lg hover:bg-slate-100 text-slate-600 font-medium transition-all flex justify-between items-center group" data-filter="Data Science">
+                                <span class="group-hover:text-orange-600">Data Science</span>
+                                <span class="bg-slate-100 group-hover:bg-white text-slate-400 group-hover:text-orange-500 px-2 py-0.5 rounded text-xs transition-colors">8</span>
+                            </button>
+                            <button class="filter-btn w-full text-left px-4 py-3 rounded-lg hover:bg-slate-100 text-slate-600 font-medium transition-all flex justify-between items-center group" data-filter="Security">
+                                <span class="group-hover:text-orange-600">Cyber Security</span>
+                                <span class="bg-slate-100 group-hover:bg-white text-slate-400 group-hover:text-orange-500 px-2 py-0.5 rounded text-xs transition-colors">6</span>
+                            </button>
+                            <button class="filter-btn w-full text-left px-4 py-3 rounded-lg hover:bg-slate-100 text-slate-600 font-medium transition-all flex justify-between items-center group" data-filter="Career">
+                                <span class="group-hover:text-orange-600">Career Guides</span>
+                                <span class="bg-slate-100 group-hover:bg-white text-slate-400 group-hover:text-orange-500 px-2 py-0.5 rounded text-xs transition-colors">5</span>
+                            </button>
+                            <button class="filter-btn w-full text-left px-4 py-3 rounded-lg hover:bg-slate-100 text-slate-600 font-medium transition-all flex justify-between items-center group" data-filter="IoT">
+                                <span class="group-hover:text-orange-600">IoT & Robotics</span>
+                                <span class="bg-slate-100 group-hover:bg-white text-slate-400 group-hover:text-orange-500 px-2 py-0.5 rounded text-xs transition-colors">5</span>
+                            </button>
+                        </nav>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-orange-50 to-rose-50 p-6 rounded-2xl border border-orange-100">
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Subscribe to our Newsletter</h3>
+                        <p class="text-sm text-slate-600 mb-4">Get the latest tech trends directly in your inbox.</p>
+                        <form class="space-y-2">
+                            <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 rounded-lg border border-slate-200 focus:outline-none focus:border-orange-500 text-sm">
+                            <button class="w-full py-2 bg-slate-900 text-white rounded-lg text-sm font-bold hover:bg-orange-600 transition-colors">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Main Blog Grid -->
+                <div class="lg:col-span-3">
+                    <div id="blogs-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Blogs injected here -->
+                    </div>
+                    
+                    <!-- Empty State -->
+                    <div id="empty-state" class="hidden text-center py-20 bg-white rounded-2xl border border-dashed border-slate-300">
+                        <p class="text-slate-500">No articles found in this category.</p>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="mt-12 flex justify-center gap-2 reveal">
+                        <button class="px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:border-orange-500 hover:text-orange-600 transition-all disabled:opacity-50" disabled>&larr; Prev</button>
+                        <button class="px-4 py-2 rounded-lg bg-slate-900 text-white font-bold">1</button>
+                        <button class="px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:border-orange-500 hover:text-orange-600 transition-all">2</button>
+                        <button class="px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:border-orange-500 hover:text-orange-600 transition-all">3</button>
+                        <button class="px-4 py-2 rounded-lg border border-slate-200 text-slate-600 hover:border-orange-500 hover:text-orange-600 transition-all">Next &rarr;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="space-y-4">
+                    <div style="filter: invert(1);">
+                        <img src="tokyo-.png" alt="Tokyo Quant Logo" class="h-10 w-auto object-contain">
+                    </div>
+                    <p class="text-sm max-w-xs mt-4">Empowering the next generation of tech leaders through advanced, practical training.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="hover:text-orange-400 transition-colors">Home</a></li>
+                        <li><a href="about-us.html" class="hover:text-orange-400 transition-colors">About Us</a></li>
+                        <li><a href="our-courses.html" class="hover:text-orange-400 transition-colors">Our Courses</a></li>
+                        <li><a href="blogs.html" class="text-orange-500 font-bold transition-colors">Blogs</a></li>
+                        <li><a href="contact.html" class="hover:text-orange-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact Us</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-orange-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>123 Tech Park Avenue, Innovation District</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-orange-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-orange-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            <span>indore@tokyoquant.in</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-16 pt-8 border-t border-slate-800 text-center text-sm">
+                <p>&copy; 2024 Tokyo Quant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logic -->
+    <script>
+        // --- MOBILE MENU ---
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // --- BLOG DATA ---
+        const blogs = [
+            {
+                title: "5 Cybersecurity Threats to Watch in 2024",
+                category: "Security",
+                date: "Dec 10, 2024",
+                readTime: "5 min read",
+                excerpt: "From AI-driven phishing to IoT vulnerabilities, discover the landscape of modern digital threats and how to protect your infrastructure.",
+                color: "from-red-500 to-rose-600"
+            },
+            {
+                title: "Python vs R: Which is Best for Data Science?",
+                category: "Data Science",
+                date: "Dec 08, 2024",
+                readTime: "7 min read",
+                excerpt: "An in-depth comparison of the two giants of data analysis. We break down libraries, learning curves, and industry demand.",
+                color: "from-blue-500 to-cyan-500"
+            },
+            {
+                title: "How to Build a Career in AI Without a PhD",
+                category: "Career",
+                date: "Dec 05, 2024",
+                readTime: "6 min read",
+                excerpt: "You don't need a doctorate to make waves in Artificial Intelligence. Here is a practical roadmap for aspiring engineers.",
+                color: "from-purple-500 to-indigo-600"
+            },
+            {
+                title: "IoT in Agriculture: The Smart Farming Revolution",
+                category: "IoT",
+                date: "Nov 28, 2024",
+                readTime: "4 min read",
+                excerpt: "See how connected sensors and autonomous drones are optimizing crop yields and reducing waste in modern farming.",
+                color: "from-green-500 to-emerald-600"
+            },
+            {
+                title: "Understanding Neural Networks: A Beginner's Guide",
+                category: "Data Science",
+                date: "Nov 25, 2024",
+                readTime: "8 min read",
+                excerpt: "Demystifying the black box. We explain layers, neurons, and backpropagation in simple terms anyone can understand.",
+                color: "from-orange-500 to-amber-500"
+            },
+            {
+                title: "The Ethical Hacker's Toolkit: Essential Tools",
+                category: "Security",
+                date: "Nov 20, 2024",
+                readTime: "5 min read",
+                excerpt: "A curated list of the must-have software tools for penetration testing, packet analysis, and vulnerability scanning.",
+                color: "from-slate-700 to-slate-900"
+            }
+        ];
+
+        function renderBlogs(filter = 'All') {
+            const container = document.getElementById('blogs-container');
+            const emptyState = document.getElementById('empty-state');
+            container.innerHTML = '';
+
+            const filteredBlogs = filter === 'All' 
+                ? blogs 
+                : blogs.filter(b => b.category === filter);
+
+            if (filteredBlogs.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            }
+            emptyState.classList.add('hidden');
+
+            filteredBlogs.forEach((blog, index) => {
+                const card = document.createElement('div');
+                card.className = 'group flex flex-col bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 reveal';
+                card.style.transitionDelay = `${index * 50}ms`;
+                
+                card.innerHTML = `
+                    <div class="h-48 bg-gradient-to-br ${blog.color} relative overflow-hidden">
+                        <div class="absolute inset-0 bg-white/10 backdrop-blur-[1px] group-hover:bg-transparent transition-all"></div>
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-slate-800 shadow-sm">
+                            ${blog.category}
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center gap-3 text-xs text-slate-400 mb-3 font-medium">
+                            <span>${blog.date}</span>
+                            <span class="w-1 h-1 rounded-full bg-slate-300"></span>
+                            <span>${blog.readTime}</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-snug group-hover:text-orange-600 transition-colors">
+                            <a href="#">${blog.title}</a>
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+                            ${blog.excerpt}
+                        </p>
+                        <div class="pt-4 border-t border-slate-100">
+                            <a href="#" class="inline-flex items-center text-sm font-bold text-slate-900 hover:text-orange-600 transition-colors group/link">
+                                Read Article 
+                                <svg class="w-4 h-4 ml-1 group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            observeReveals();
+        }
+
+        // --- FILTER LOGIC ---
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const targetBtn = e.currentTarget;
+                
+                // Reset all styles to default state
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-slate-900', 'text-white', 'shadow-md');
+                    b.classList.add('hover:bg-slate-100', 'text-slate-600');
+                    // Reset pills
+                    const countSpan = b.querySelector('span:last-child');
+                    if(countSpan) {
+                         countSpan.classList.remove('bg-white/20');
+                         countSpan.classList.add('bg-slate-100', 'text-slate-400');
+                    }
+                });
+
+                // Set Active Style
+                targetBtn.classList.remove('hover:bg-slate-100', 'text-slate-600');
+                targetBtn.classList.add('bg-slate-900', 'text-white', 'shadow-md');
+                
+                const activePill = targetBtn.querySelector('span:last-child');
+                if(activePill) {
+                    activePill.classList.remove('bg-slate-100', 'text-slate-400', 'group-hover:bg-white', 'group-hover:text-orange-500');
+                    activePill.classList.add('bg-white/20');
+                }
+
+                renderBlogs(targetBtn.dataset.filter);
+            });
+        });
+
+        // --- SCROLL OBSERVER ---
+        function observeReveals() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        // --- SCROLL PROGRESS ---
+        window.onscroll = function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+
+        // Init
+        window.addEventListener('DOMContentLoaded', () => {
+            renderBlogs();
+        });
+    </script>
+</body>
+</html>

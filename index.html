@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO: Primary Meta Tags -->
+    <title>Tokyo Quant | Best IT Training Institute - Data Science, AI, IoT & Cyber Security</title>
+    <meta name="description" content="Master future-ready skills at Tokyo Quant. We offer advanced IT training in Data Science, Robotic IoT, Cyber Security, Ethical Hacking, and Digital Marketing with 100% placement support and expert mentorship.">
+    <meta name="keywords" content="Tokyo Quant, IT Training Institute, Data Science Course, Cyber Security Certification, Ethical Hacking, Robotic IoT, AI Training, Digital Marketing Course, Tech Education, Coding Bootcamp">
+    <meta name="author" content="Tokyo Quant">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="LAW2.png" type="png">
+
+    <!-- SEO: Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tokyoquant.in/">
+    <meta property="og:title" content="Tokyo Quant | Empower Your Future with Advanced Tech Training">
+    <meta property="og:description" content="Join top-tier courses in Data Science, AI, and Security. Hands-on projects, industry experts, and career acceleration.">
+    <meta property="og:image" content="tokyo-.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- SEO: Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Tokyo Quant",
+      "url": "https://www.tokyoquant.edu/",
+      "logo": "tokyo-.png",
+      "description": "Leading IT training provider offering hands-on courses in emerging technologies.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Tech Park Avenue",
+        "addressLocality": "Tokyo Quant HQ",
+        "addressCountry": "JP" 
+      }
+    }
+    </script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* 3D Perspective Utils */
+        .perspective-1000 { perspective: 1000px; }
+        .preserve-3d { transform-style: preserve-3d; }
+        
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Robot Animations Keyframes */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        @keyframes spin-slow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes scan-line {
+            0% { top: 0%; opacity: 0; }
+            50% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        @keyframes blink {
+            0%, 45%, 55%, 100% { height: 32px; }
+            50% { height: 2px; }
+        }
+        @keyframes arm-left {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(5deg); }
+        }
+        @keyframes arm-right {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(-5deg); }
+        }
+        @keyframes pulse-shadow {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(0.9); opacity: 0.3; }
+        }
+        @keyframes particle-float {
+            0% { transform: translate(0, 0) scale(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translate(var(--tx), -100px) scale(0); opacity: 0; }
+        }
+
+        /* Animation Classes */
+        .animate-float { animation: float 4s ease-in-out infinite; }
+        .animate-spin-slow { animation: spin-slow 10s linear infinite; }
+        .animate-scan { animation: scan-line 3s linear infinite; }
+        .animate-blink { animation: blink 3s infinite; }
+        .animate-arm-left { animation: arm-left 4s ease-in-out infinite; transform-origin: top; }
+        .animate-arm-right { animation: arm-right 4s ease-in-out infinite 0.5s; transform-origin: top; }
+        .animate-shadow { animation: pulse-shadow 4s ease-in-out infinite; }
+        
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            opacity: 0;
+            animation: particle-float 3s ease-out infinite;
+        }
+
+        /* Form styling extras */
+        .form-input {
+            transition: all 0.3s;
+        }
+        .form-input:focus {
+            box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 selection:bg-orange-200 selection:text-orange-900 overflow-x-hidden">
+
+    <!-- Progress Bar -->
+    <div id="progress-bar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-orange-500 to-rose-600 z-50 transition-all duration-100 w-0"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-40 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 cursor-pointer flex items-center gap-2" onclick="window.scrollTo(0,0)">
+                    <img src="tokyo-.png" alt="Tokyo Quant Logo" class="h-10 w-auto object-contain">
+                    <span class="font-extrabold text-2xl tracking-tighter sr-only">TOKYO QUANT</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-sm font-semibold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-wide">Home</a>
+                    <a href="about-us.html" class="text-sm font-semibold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-wide">About Us</a>
+                    <a href="our-courses.html" class="text-sm font-semibold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-wide">Our Courses</a>
+                    <a href="blogs.html" class="text-sm font-semibold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-wide">Blogs</a>
+                    <a href="contact.html" class="text-sm font-semibold text-slate-600 hover:text-orange-600 transition-colors uppercase tracking-wide">Contact</a>
+                    <a href="https://wa.me/918871570706" target="_blank" rel="noopener"
+   class="px-6 py-2.5 rounded-full bg-slate-900 text-white font-bold text-sm hover:bg-gradient-to-r hover:from-orange-600 hover:to-rose-600 transition-all shadow-lg hover:shadow-orange-500/25 inline-block text-center">
+    Enroll Now
+</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" aria-label="Toggle Menu" class="text-slate-900 focus:outline-none">
+                        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                        <svg id="close-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 18 18"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-4 pt-2 pb-8 space-y-4 flex flex-col items-center">
+                <a href="index.html" class="mobile-link text-lg font-medium text-slate-800">Home</a>
+                <a href="about-us.html" class="mobile-link text-lg font-medium text-slate-800">About Us</a>
+                <a href="our-courses.html" class="mobile-link text-lg font-medium text-slate-800">Our Courses</a>
+                <a href="blogs.html" class="mobile-link text-lg font-medium text-slate-800">Blogs</a>
+                <a href="contact.html" class="mobile-link text-lg font-medium text-slate-800">Contact</a>
+                <a href="contact.html" class="w-full mt-4 px-6 py-3 rounded-lg bg-slate-900 text-white font-bold text-center block">Enroll Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-20 min-h-screen flex items-center overflow-hidden">
+        <!-- Background Grid -->
+        <div class="absolute inset-0 z-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#f97316 1px, transparent 1px); background-size: 40px 40px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Text Content -->
+            <div class="text-center lg:text-left order-2 lg:order-1 reveal">
+                <div class="inline-block mb-4 px-4 py-1.5 rounded-full bg-orange-50 border border-orange-100 text-orange-700 text-xs font-bold uppercase tracking-wider">
+                    Future Ready
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-black text-slate-900 leading-tight mb-6">
+                    Empower Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-rose-600">Future</span> with Tokyo Quant
+                </h1>
+                <p class="text-xl text-slate-500 mb-8 max-w-lg mx-auto lg:mx-0 font-medium">
+                    Master Data, Security, and Innovation
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+                    <a href="contact.html" class="px-6 py-3 rounded-full bg-slate-900 text-white font-bold text-base hover:bg-gradient-to-r hover:from-orange-600 hover:to-rose-600 transition-all shadow-xl hover:shadow-orange-500/30 inline-flex items-center justify-center gap-2 group">
+                        Enroll Now
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                    <div class="flex flex-wrap gap-2 justify-center lg:justify-start">
+                        <span class="px-4 py-3 rounded-full border border-slate-200 text-slate-600 text-sm font-semibold bg-white hover:border-orange-400 hover:text-orange-600 transition-colors cursor-default">Data Analytics</span>
+                        <span class="px-4 py-3 rounded-full border border-slate-200 text-slate-600 text-sm font-semibold bg-white hover:border-orange-400 hover:text-orange-600 transition-colors cursor-default">Robotic IoT</span>
+                        <span class="px-4 py-3 rounded-full border border-slate-200 text-slate-600 text-sm font-semibold bg-white hover:border-orange-400 hover:text-orange-600 transition-colors cursor-default">Cyber Security</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3D Robot Container -->
+            <div class="h-[400px] lg:h-[600px] w-full relative order-1 lg:order-2 flex items-center justify-center reveal">
+                <!-- Background Glow -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-orange-100/50 to-rose-100/50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+                
+                <!-- ROBOT HTML -->
+                <div class="relative w-full h-full flex items-center justify-center">
+                    <!-- Shadow -->
+                    <div class="absolute bottom-10 w-48 h-12 bg-orange-500/20 blur-xl rounded-full animate-shadow"></div>
+
+                    <!-- Robot Body -->
+                    <div class="relative z-10 flex flex-col items-center animate-float">
+                        <!-- Antenna -->
+                        <div class="w-1 h-8 bg-slate-400 relative animate-[arm-left_2s_ease-in-out_infinite]">
+                            <div class="absolute -top-2 -left-1.5 w-4 h-4 bg-orange-500 rounded-full shadow-[0_0_10px_#f97316] animate-pulse"></div>
+                        </div>
+
+                        <!-- Head -->
+                        <div class="w-32 h-24 bg-white border-2 border-slate-200 rounded-2xl relative shadow-lg overflow-hidden flex items-center justify-center mb-1 z-20">
+                            <div class="w-28 h-20 bg-slate-900 rounded-xl relative flex items-center justify-center gap-4 overflow-hidden">
+                                <div class="absolute w-full h-1 bg-orange-500/30 blur-sm animate-scan"></div>
+                                <div class="w-6 h-8 bg-orange-400 rounded-full shadow-[0_0_10px_#f97316] animate-blink"></div>
+                                <div class="w-6 h-8 bg-orange-400 rounded-full shadow-[0_0_10px_#f97316] animate-blink"></div>
+                            </div>
+                            <div class="absolute -right-2 top-8 w-4 h-8 bg-slate-300 rounded-l-md"></div>
+                            <div class="absolute -left-2 top-8 w-4 h-8 bg-slate-300 rounded-r-md"></div>
+                        </div>
+
+                        <!-- Neck -->
+                        <div class="w-12 h-4 bg-slate-300 rounded-md -mt-1 z-10"></div>
+
+                        <!-- Body -->
+                        <div class="relative w-48 h-40 bg-white border border-slate-200 rounded-3xl shadow-xl flex flex-col items-center pt-8 z-20">
+                            <!-- Core -->
+                            <div class="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center border-4 border-slate-300 relative overflow-hidden">
+                                <div class="absolute w-full h-full bg-gradient-to-tr from-orange-500 to-rose-600 opacity-80 animate-spin-slow"></div>
+                                <div class="absolute w-12 h-12 bg-slate-900 rounded-full z-10"></div>
+                                <div class="absolute w-8 h-8 bg-orange-400 rounded-full z-20 blur-sm animate-pulse"></div>
+                            </div>
+                            <!-- Details -->
+                            <div class="absolute top-4 left-6 w-8 h-2 bg-slate-200 rounded-full"></div>
+                            <div class="absolute top-8 left-6 w-4 h-2 bg-rose-400 rounded-full"></div>
+                            <div class="absolute top-4 right-6 w-8 h-8 border-2 border-orange-200 rounded-full border-dashed animate-spin-slow"></div>
+                        </div>
+
+                        <!-- Arms -->
+                        <div class="absolute top-36 w-64 flex justify-between px-2">
+                            <div class="w-10 h-32 bg-gradient-to-b from-white to-slate-100 border border-slate-200 rounded-2xl shadow-md animate-arm-left">
+                                <div class="w-full h-4 bg-slate-300 mt-4"></div>
+                                <div class="w-8 h-8 bg-orange-100 rounded-full mx-auto mt-12 border border-orange-200"></div>
+                            </div>
+                            <div class="w-10 h-32 bg-gradient-to-b from-white to-slate-100 border border-slate-200 rounded-2xl shadow-md animate-arm-right">
+                                <div class="w-full h-4 bg-slate-300 mt-4"></div>
+                                <div class="w-8 h-8 bg-rose-100 rounded-full mx-auto mt-12 border border-rose-200"></div>
+                            </div>
+                        </div>
+
+                        <!-- Hips/Legs -->
+                        <div class="w-24 h-6 bg-slate-300 -mt-2 rounded-b-xl z-10"></div>
+                        <div class="flex gap-4 mt-1">
+                            <div class="w-14 h-24 bg-white border border-slate-200 rounded-xl shadow-md flex flex-col items-center">
+                                <div class="w-10 h-16 bg-slate-50 mt-2 rounded-lg border border-slate-100"></div>
+                                <div class="w-16 h-8 bg-slate-800 rounded-t-lg mt-auto"></div>
+                            </div>
+                            <div class="w-14 h-24 bg-white border border-slate-200 rounded-xl shadow-md flex flex-col items-center">
+                                <div class="w-10 h-16 bg-slate-50 mt-2 rounded-lg border border-slate-100"></div>
+                                <div class="w-16 h-8 bg-slate-800 rounded-t-lg mt-auto"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Particles Container (Populated by JS) -->
+                    <div id="particles-container"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Arrow -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-300 animate-bounce">
+            <div class="w-6 h-10 border-2 border-slate-300 rounded-full flex justify-center p-1">
+                <div class="w-1 h-2 bg-slate-400 rounded-full"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about-us" class="py-24 relative bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Content -->
+                <div class="reveal">
+                    <div class="mb-16 text-left relative z-10">
+                        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">About Us</h2>
+                        <div class="h-1.5 bg-gradient-to-r from-orange-500 to-rose-600 rounded-full mb-6 w-20"></div>
+                        <p class="text-xl text-slate-600 font-medium">Leading IT Training Provider</p>
+                    </div>
+                    <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                        <p>Tokyo Quant is a leading IT training provider offering hands-on courses in emerging technologies. Our mission is to bridge the gap between theoretical knowledge and practical application.</p>
+                        <p>With expert instructors, state-of-the-art facilities, and industry-relevant curriculum, we ensure our students gain the skills needed to excel.</p>
+                    </div>
+                    <div class="mt-8 flex gap-4">
+                        <div class="flex items-center gap-2 text-orange-700 font-bold bg-orange-50 px-4 py-2 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Industry Certified
+                        </div>
+                        <div class="flex items-center gap-2 text-rose-700 font-bold bg-rose-50 px-4 py-2 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Live Projects
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <!-- Stat 1 -->
+                    <div class="reveal bg-white p-6 rounded-2xl shadow-lg border border-slate-100 flex flex-col items-center text-center group hover:-translate-y-2 transition-transform">
+                        <div class="mb-4 p-3 bg-slate-50 rounded-full group-hover:bg-orange-50 transition-colors">
+                            <svg class="w-6 h-6 text-slate-400 group-hover:text-orange-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <span class="counter text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-rose-600" data-target="500">0</span>
+                        <span class="text-slate-500 font-medium mt-2">Students Trained</span>
+                    </div>
+                    <!-- Stat 2 -->
+                    <div class="reveal bg-white p-6 rounded-2xl shadow-lg border border-slate-100 flex flex-col items-center text-center group hover:-translate-y-2 transition-transform" style="transition-delay: 100ms;">
+                        <div class="mb-4 p-3 bg-slate-50 rounded-full group-hover:bg-orange-50 transition-colors">
+                            <svg class="w-6 h-6 text-slate-400 group-hover:text-orange-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                        </div>
+                        <span class="counter text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-rose-600" data-target="11">0</span>
+                        <span class="text-slate-500 font-medium mt-2">Expert Instructors</span>
+                    </div>
+                    <!-- Stat 3 -->
+                    <div class="reveal bg-white p-6 rounded-2xl shadow-lg border border-slate-100 flex flex-col items-center text-center group hover:-translate-y-2 transition-transform" style="transition-delay: 200ms;">
+                        <div class="mb-4 p-3 bg-slate-50 rounded-full group-hover:bg-orange-50 transition-colors">
+                            <svg class="w-6 h-6 text-slate-400 group-hover:text-orange-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
+                        </div>
+                        <span class="counter text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-rose-600" data-target="95" data-suffix="%">0</span>
+                        <span class="text-slate-500 font-medium mt-2">Placement Rate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 text-center reveal">
+                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">Why Choose Us</h2>
+                <div class="h-1.5 bg-gradient-to-r from-orange-500 to-rose-600 rounded-full mb-6 mx-auto w-20"></div>
+                <p class="text-xl text-slate-600 font-medium">Your Pathway to Success</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Item 1 -->
+                <div class="p-6 rounded-xl bg-slate-50 hover:bg-white hover:shadow-xl border border-transparent hover:border-orange-100 transition-all text-center group reveal" style="transition-delay: 0ms;">
+                    <div class="w-14 h-14 mx-auto bg-white rounded-full flex items-center justify-center shadow-sm mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 text-orange-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Expert Mentors</h3>
+                    <p class="text-sm text-slate-500">Learn from industry veterans.</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="p-6 rounded-xl bg-slate-50 hover:bg-white hover:shadow-xl border border-transparent hover:border-orange-100 transition-all text-center group reveal" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 mx-auto bg-white rounded-full flex items-center justify-center shadow-sm mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 text-orange-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Live Projects</h3>
+                    <p class="text-sm text-slate-500">Work on real-world datasets.</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="p-6 rounded-xl bg-slate-50 hover:bg-white hover:shadow-xl border border-transparent hover:border-orange-100 transition-all text-center group reveal" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 mx-auto bg-white rounded-full flex items-center justify-center shadow-sm mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 text-orange-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.1 4-1 4-1"/><path d="M12 15v5s3.03-.55 4-2c1.1-1.62 1-4 1-4"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Job Support</h3>
+                    <p class="text-sm text-slate-500">100% placement assistance.</p>
+                </div>
+                <!-- Item 4 -->
+                <div class="p-6 rounded-xl bg-slate-50 hover:bg-white hover:shadow-xl border border-transparent hover:border-orange-100 transition-all text-center group reveal" style="transition-delay: 300ms;">
+                    <div class="w-14 h-14 mx-auto bg-white rounded-full flex items-center justify-center shadow-sm mb-4 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 text-orange-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Certification</h3>
+                    <p class="text-sm text-slate-500">Globally recognized certificates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="our-courses" class="py-24 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 text-center reveal">
+                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">Our Courses</h2>
+                <div class="h-1.5 bg-gradient-to-r from-orange-500 to-rose-600 rounded-full mb-6 mx-auto w-20"></div>
+                <p class="text-xl text-slate-600 font-medium">Learn the Skills of the Future</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12 reveal">
+                <button class="filter-btn active px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 bg-slate-900 text-white shadow-lg scale-105" data-filter="All">All Courses</button>
+                <button class="filter-btn px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 bg-white border border-slate-200 text-slate-600 hover:bg-slate-100" data-filter="Data">Data</button>
+                <button class="filter-btn px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 bg-white border border-slate-200 text-slate-600 hover:bg-slate-100" data-filter="Security">Security</button>
+                <button class="filter-btn px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 bg-white border border-slate-200 text-slate-600 hover:bg-slate-100" data-filter="Marketing">Marketing</button>
+                <button class="filter-btn px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 bg-white border border-slate-200 text-slate-600 hover:bg-slate-100" data-filter="IoT">IoT</button>
+            </div>
+
+            <!-- Grid -->
+            <div id="course-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Courses injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blogs -->
+    <section id="blogs" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 text-center reveal">
+                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">Latest Insights</h2>
+                <div class="h-1.5 bg-gradient-to-r from-orange-500 to-rose-600 rounded-full mb-6 mx-auto w-20"></div>
+                <p class="text-xl text-slate-600 font-medium">Trends, Tips & Technology</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="blog-grid">
+                <!-- Blogs injected via JS -->
+            </div>
+            
+            <div class="text-center mt-12 reveal">
+                <button class="px-8 py-3 rounded-lg border-2 border-slate-200 text-slate-700 font-bold hover:border-orange-500 hover:text-orange-600 transition-all">View All Articles</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <div class="absolute inset-0 opacity-20 bg-cover brightness-100 contrast-150 mix-blend-overlay" style="background-image: url('https://grainy-gradients.vercel.app/noise.svg');"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-rose-600/20 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-orange-600/20 rounded-full blur-[100px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">What Our Students Say</h2>
+                <div class="h-1 w-20 bg-gradient-to-r from-orange-500 to-rose-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonials -->
+                <div class="reveal bg-white/10 backdrop-blur-lg border border-white/10 p-8 rounded-2xl hover:bg-white/15 transition-colors">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-rose-500 flex items-center justify-center text-xl font-bold text-white shadow-lg">S</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Sarah Jenkins</h4>
+                            <p class="text-orange-300 text-sm">Data Scientist</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 italic text-lg leading-relaxed">"Tokyo Quant helped me switch my career into Data Science with confidence."</p>
+                </div>
+                <div class="reveal bg-white/10 backdrop-blur-lg border border-white/10 p-8 rounded-2xl hover:bg-white/15 transition-colors" style="transition-delay: 100ms;">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-rose-500 flex items-center justify-center text-xl font-bold text-white shadow-lg">M</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Michael Chen</h4>
+                            <p class="text-orange-300 text-sm">IoT Engineer</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 italic text-lg leading-relaxed">"The hands-on projects and instructor guidance were game-changing."</p>
+                </div>
+                <div class="reveal bg-white/10 backdrop-blur-lg border border-white/10 p-8 rounded-2xl hover:bg-white/15 transition-colors" style="transition-delay: 200ms;">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-rose-500 flex items-center justify-center text-xl font-bold text-white shadow-lg">P</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Priya Patel</h4>
+                            <p class="text-orange-300 text-sm">Security Analyst</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 italic text-lg leading-relaxed">"I secured a cybersecurity role within months of completing my course."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-orange-50 skew-y-3 transform origin-bottom-right scale-110 z-0"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10 reveal">
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6">Ready to Master Data, Security, and Innovation?</h2>
+            <p class="text-xl text-slate-600 mb-10">Join Tokyo Quant and build a future-proof tech career.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="px-6 py-3 rounded-full bg-slate-900 text-white font-bold text-lg hover:bg-gradient-to-r hover:from-orange-600 hover:to-rose-600 transition-all shadow-xl hover:shadow-orange-500/30 inline-block text-center">Enroll Now</a>
+                <a href="contact.html" class="px-10 py-4 rounded-full border-2 border-slate-200 text-slate-700 font-bold text-lg hover:border-orange-500 hover:text-orange-600 transition-all bg-white inline-block text-center">Talk to an Advisor</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="space-y-4">
+                    <div style="filter: invert(1);">
+                        <img src="tokyo-.png" alt="Tokyo Quant Logo" class="h-10 w-auto object-contain">
+                    </div>
+                    <p class="text-sm max-w-xs mt-4">Empowering the next generation of tech leaders through advanced, practical training.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="hover:text-orange-400 transition-colors">Home</a></li>
+                        <li><a href="#about-us" class="hover:text-orange-400 transition-colors">About Us</a></li>
+                        <li><a href="#our-courses" class="hover:text-orange-400 transition-colors">Our Courses</a></li>
+                        <li><a href="#blogs" class="hover:text-orange-400 transition-colors">Blogs</a></li>
+                        <li><a href="#contact" class="hover:text-orange-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact Us</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-orange-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>123 Tech Park Avenue, Innovation District</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-orange-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-orange-500 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                            <span>indore@tokyoquant.in</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-16 pt-8 border-t border-slate-800 text-center text-sm">
+                <p>&copy; 2024 Tokyo Quant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- POP-UP MODAL (Web3Forms) -->
+    <div id="popup-overlay" class="fixed inset-0 z-[60] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm transition-opacity opacity-0 duration-300 ease-out" id="popup-backdrop"></div>
+      
+        <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+            <!-- Modal Panel -->
+            <div id="popup-panel" class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all duration-300 ease-out sm:w-full sm:max-w-lg opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95 border border-slate-100">
+                
+                <!-- Close Button -->
+                <div class="absolute right-4 top-4 z-10">
+                    <button type="button" id="close-popup-btn" class="rounded-full bg-slate-100 p-1.5 text-slate-400 hover:text-rose-600 hover:bg-rose-50 focus:outline-none transition-all">
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
+                </div>
+
+                <div class="flex flex-col md:flex-row">
+                    <!-- Decor Side -->
+                    <div class="hidden md:block w-32 bg-gradient-to-br from-slate-900 to-slate-800 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-full opacity-20" style="background-image: radial-gradient(#f97316 1px, transparent 1px); background-size: 10px 10px;"></div>
+                        <div class="absolute bottom-0 left-0 w-32 h-32 bg-orange-500/20 rounded-full blur-2xl"></div>
+                    </div>
+
+                    <!-- Form Content -->
+                    <div class="flex-1 p-8">
+                        <div class="text-left mb-6">
+                            <span class="inline-block px-3 py-1 rounded-full bg-orange-50 text-orange-600 text-xs font-bold uppercase tracking-wider mb-2">Limited Offer</span>
+                            <h3 class="text-2xl font-bold text-slate-900 leading-tight">Get a Free Course Syllabus</h3>
+                            <p class="text-sm text-slate-500 mt-2">Enter your details below and our team will send you the complete curriculum instantly.</p>
+                        </div>
+
+                        <!-- Web3Forms Integration -->
+                        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                            
+                            <!-- REPLACE 'YOUR_ACCESS_KEY_HERE' WITH YOUR ACTUAL KEY -->
+                            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+                            <div>
+                                <label for="name" class="sr-only">Full Name</label>
+                                <input type="text" name="name" id="name" required class="form-input block w-full rounded-lg border-slate-200 bg-slate-50 text-slate-900 placeholder:text-slate-400 focus:ring-0 focus:border-orange-500 sm:text-sm sm:leading-6 px-4 py-3" placeholder="Full Name">
+                            </div>
+
+                            <div>
+                                <label for="email" class="sr-only">Email Address</label>
+                                <input type="email" name="email" id="email" required class="form-input block w-full rounded-lg border-slate-200 bg-slate-50 text-slate-900 placeholder:text-slate-400 focus:ring-0 focus:border-orange-500 sm:text-sm sm:leading-6 px-4 py-3" placeholder="Email Address">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="sr-only">Phone Number</label>
+                                <input type="tel" name="phone" id="phone" class="form-input block w-full rounded-lg border-slate-200 bg-slate-50 text-slate-900 placeholder:text-slate-400 focus:ring-0 focus:border-orange-500 sm:text-sm sm:leading-6 px-4 py-3" placeholder="Phone Number">
+                            </div>
+
+                            <button type="submit" class="w-full rounded-lg bg-gradient-to-r from-slate-900 to-slate-800 px-4 py-3.5 text-sm font-bold text-white shadow-lg hover:from-orange-600 hover:to-rose-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 transition-all duration-300 transform hover:-translate-y-0.5">
+                                Download Syllabus
+                            </button>
+                            <p class="text-xs text-center text-slate-400 mt-3">We respect your privacy. No spam.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vanilla JavaScript Logic -->
+    <script>
+        // --- DATA ---
+        const courses = [
+    {
+        category: 'Data',
+        title: 'Data Analytics',
+        duration: '4 Months',
+        level: 'Beginner',
+        projects: '5 Projects',
+        icon: 'BarChart2',
+        enrollLink: 'https://wa.me/918871570706',
+        learnLink: 'best-data-analytics-institute.html'
+    },
+    {
+        category: 'Data',
+        title: 'Data Science',
+        duration: '6 Months',
+        level: 'Intermediate',
+        projects: '8 AI Apps',
+        icon: 'Brain',
+        enrollLink: 'https://wa.me/918871570706',
+        learnLink: 'data-science.html'
+    },
+    {
+        category: 'IoT',
+        title: 'Robotic IoT',
+        duration: '6 Months',
+        level: 'All Levels',
+        projects: '6 Devices',
+        icon: 'Cpu',
+        enrollLink: 'https://wa.me/918871570706',
+        learnLink: 'best-ai-automation-with-robotics-institute-in-indore.html'
+    },
+    {
+        category: 'Security',
+        title: 'Ethical Hacking',
+        duration: '5 Months',
+        level: 'Intermediate',
+        projects: '10 Assessments',
+        icon: 'Shield',
+        enrollLink: 'https://wa.me/918871570706',
+        learnLink: 'best-cyber-security-ethical-hacking-institute-in-indore.html'
+    },
+    {
+        category: 'Marketing',
+        title: 'Digital Marketing',
+        duration: '4 Months',
+        level: 'Intermidiate',
+        projects: '4 Projects',
+        icon: 'Globe',
+        enrollLink: 'https://wa.me/918871570706',
+        learnLink: 'best-ai-driven-digital-marketing-institute-in-indore.html'
+    },
+    {
+        category: 'Security',
+        title: 'Cyber Security',
+        duration: '6 Months',
+        level: 'Advanced',
+        projects: '7 Implementations',
+        icon: 'Shield',
+        enrollLink: 'https://wa.me/918871570706',
+        learnLink: 'best-cyber-security-ethical-hacking-institute-in-indore.html'
+    }
+];
+
+        const blogs = [
+            { category: 'Data Science', title: 'The Future of AI in Finance', date: 'Oct 12, 2023', excerpt: 'Exploring machine learning in high-frequency trading.', color: 'from-orange-400 to-red-500' },
+            { category: 'Cyber Security', title: 'IoT Security: Essentials', date: 'Nov 05, 2023', excerpt: 'Securing the IoT ecosystem for businesses.', color: 'from-blue-400 to-indigo-500' },
+            { category: 'Analytics', title: 'Visualization Trends 2024', date: 'Dec 01, 2023', excerpt: 'Beyond bar charts: interactive dashboards.', color: 'from-green-400 to-emerald-500' }
+        ];
+
+        // --- ICONS (SVG Strings) ---
+        const icons = {
+            BarChart2: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>',
+            Brain: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.97-3.284"/><path d="M17.97 14.716A4 4 0 0 1 16 18"/></svg>',
+            Cpu: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>',
+            Shield: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>',
+            Globe: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>'
+        };
+
+        // --- RENDER FUNCTIONS ---
+        function renderCourses(filter = 'All') {
+            const grid = document.getElementById('course-grid');
+            grid.innerHTML = '';
+            
+            courses.filter(c => filter === 'All' || c.category === filter).forEach((course, index) => {
+                const card = document.createElement('div');
+                card.className = 'group relative bg-white rounded-2xl p-8 border border-slate-200 shadow-xl hover:shadow-orange-500/20 transition-all duration-300 overflow-hidden reveal';
+                card.style.transitionDelay = `${index * 50}ms`;
+                card.innerHTML = `
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-orange-500/10 rounded-full blur-2xl group-hover:bg-orange-500/20 transition-all duration-500"></div>
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="p-3 bg-slate-50 rounded-xl group-hover:bg-gradient-to-br from-orange-50 to-rose-50 transition-colors text-slate-800 group-hover:text-orange-600">
+                            ${icons[course.icon]}
+                        </div>
+                        <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-500 bg-slate-100 rounded-full">${course.duration}</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-orange-600 group-hover:to-rose-600 transition-all">${course.title}</h3>
+                    <p class="text-slate-600 mb-6 h-12 text-sm font-medium border-b border-slate-100 pb-4">${course.title} description placeholder.</p>
+                    <div class="flex gap-3 mt-auto">
+                        <a href="${course.enrollLink}" class="flex-1 py-2.5 rounded-lg bg-slate-900 text-white font-semibold text-sm hover:bg-gradient-to-r hover:from-orange-600 hover:to-rose-600 transition-all shadow-lg text-center flex items-center justify-center">
+    Enroll Now
+</a>
+<a href="${course.learnLink}" class="px-4 py-2.5 rounded-lg border border-slate-200 text-slate-700 font-semibold text-sm hover:border-orange-500 hover:text-orange-600 transition-all text-center flex items-center justify-center">
+    Learn More
+</a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+            observeReveals();
+        }
+
+        function renderBlogs() {
+            const grid = document.getElementById('blog-grid');
+            blogs.forEach((blog, index) => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300 group reveal';
+                card.style.transitionDelay = `${index * 100}ms`;
+                card.innerHTML = `
+                    <div class="h-48 bg-slate-200 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br ${blog.color} opacity-80 group-hover:scale-105 transition-transform duration-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center text-white opacity-50">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider text-slate-800">${blog.category}</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-xs text-slate-400 mb-3"><span>${blog.date}</span></div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">${blog.title}</h3>
+                        <p class="text-slate-600 text-sm mb-4 line-clamp-2">${blog.excerpt}</p>
+                        <a href="#" class="text-sm font-bold text-orange-600 flex items-center gap-1 group-hover:gap-2 transition-all">Read Article →</a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // --- INTERACTION LOGIC ---
+        
+        // Mobile Menu
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+
+        // Filtering
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-slate-900', 'text-white', 'shadow-lg', 'scale-105');
+                    b.classList.add('bg-white', 'text-slate-600');
+                });
+                e.target.classList.remove('bg-white', 'text-slate-600');
+                e.target.classList.add('bg-slate-900', 'text-white', 'shadow-lg', 'scale-105');
+                renderCourses(e.target.dataset.filter);
+            });
+        });
+
+        // Scroll Progress
+        window.onscroll = function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+
+        // Scroll Reveal & Counters
+        function observeReveals() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        
+                        // Handle Counters
+                        if(entry.target.querySelector('.counter')) {
+                            const counter = entry.target.querySelector('.counter');
+                            const target = +counter.getAttribute('data-target');
+                            const suffix = counter.getAttribute('data-suffix') || "+";
+                            let count = 0;
+                            const updateCount = () => {
+                                const increment = target / 50;
+                                if(count < target) {
+                                    count += increment;
+                                    counter.innerText = Math.ceil(count) + suffix;
+                                    setTimeout(updateCount, 30);
+                                } else {
+                                    counter.innerText = target + suffix;
+                                }
+                            };
+                            updateCount();
+                            // remove class to prevent re-triggering logic
+                            counter.classList.remove('counter'); 
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        // Particle System for Robot
+        function createParticles() {
+            const container = document.getElementById('particles-container');
+            for(let i=0; i<6; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.backgroundColor = i % 2 === 0 ? '#fb923c' : '#fb7185';
+                p.style.left = '50%';
+                p.style.top = '60%';
+                p.style.setProperty('--tx', `${(Math.random() - 0.5) * 100}px`);
+                p.style.animationDelay = `${i * 0.5}s`;
+                container.appendChild(p);
+            }
+        }
+
+        // --- POPUP LOGIC ---
+        const popupOverlay = document.getElementById('popup-overlay');
+        const popupBackdrop = document.getElementById('popup-backdrop');
+        const popupPanel = document.getElementById('popup-panel');
+        const closePopupBtn = document.getElementById('close-popup-btn');
+
+        function showPopup() {
+            popupOverlay.classList.remove('hidden');
+            // Small delay to allow display:block to apply before opacity transition
+            setTimeout(() => {
+                popupBackdrop.classList.remove('opacity-0');
+                popupPanel.classList.remove('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+                popupPanel.classList.add('opacity-100', 'translate-y-0', 'sm:scale-100');
+            }, 10);
+        }
+
+        function hidePopup() {
+            popupBackdrop.classList.add('opacity-0');
+            popupPanel.classList.remove('opacity-100', 'translate-y-0', 'sm:scale-100');
+            popupPanel.classList.add('opacity-0', 'translate-y-4', 'sm:translate-y-0', 'sm:scale-95');
+            
+            // Wait for transition to finish before hiding element
+            setTimeout(() => {
+                popupOverlay.classList.add('hidden');
+            }, 300);
+        }
+
+        // Trigger after 5 seconds
+        setTimeout(showPopup, 5000);
+
+        // Close events
+        closePopupBtn.addEventListener('click', hidePopup);
+        
+        // Close on clicking backdrop
+        popupOverlay.addEventListener('click', (e) => {
+            if (e.target === popupOverlay || e.target === document.querySelector('#popup-overlay > div')) {
+                hidePopup();
+            }
+        });
+
+        // --- INIT ---
+        window.addEventListener('DOMContentLoaded', () => {
+            renderCourses();
+            renderBlogs();
+            createParticles();
+            observeReveals();
+        });
+
+    </script>
+</body>
+</html>
